@@ -1,0 +1,61 @@
+#include <iostream>
+
+using namespace std;
+
+class Calculator { // создаем класс
+private:
+double num1, num2;
+
+public:
+void Numbers(double a, double b) { // функция присваивания пременным значения
+num1 = a;
+num2 = b;
+}
+
+double Sum(double a, double b) { // функция суммы чисел
+return a + b;
+}
+
+double Dif(double a, double b) { // функция разности чисел
+return a - b;
+}
+
+double Mul(double a, double b) { // функция умножения чисел
+return a * b;
+}
+
+double Div(double a, double b) { // функция деления чисел
+return a / b;
+}
+};
+
+class Calculator2 : public Calculator { // создаем подкласс
+public:
+double Div1(double a, double b) { // функция выделения целой части при делении чисел
+int c1 = static_cast<int>(a / b);
+return c1;
+}
+
+double Div2(double a, double b) { // функция выделения дробной части при делении чисел
+double c2 = Div(a, b) - Div1(a, b);
+return c2;
+}
+};
+
+int main() {
+double a, b;
+cout << "Enter the first number:" << endl;
+cin >> a;
+cout << "Enter the second number:" << endl;
+cin >> b;
+
+Calculator2 ask; // получаем доступ к подклассу Calculator2, отсюда и доступ к классу Calculator
+ask.Numbers(a, b);
+cout << "a + b = " << ask.Sum(a, b) << endl;
+cout << "a - b = " << ask.Dif(a, b) << endl;
+cout << "a * b = " << ask.Mul(a, b) << endl;
+cout << "a / b = " << ask.Div(a, b) << endl;
+cout << "The integer part = " << ask.Div1(a, b) << endl;
+cout << "The remainder = " << ask.Div2(a, b) << endl;
+return 0;
+}
