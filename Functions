@@ -1,0 +1,88 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+void Yrovnenie(double a, double b, double c) { // решение квадратного уравнения 
+    double x1, x2, D;
+    
+    D = b * b - 4 * a * c;
+    
+    if (D < 0) { 
+        cout << "Уравнение не имеет решений" << endl << endl; // если дискриминант меньше 0
+    }
+    
+    else if (D == 0) {
+        x1 = -b / (2 * a);
+        cout << "Уравнение имеет единственное решение: " << x1 << endl << endl; // если дискриминант равен 0
+    }
+    
+    else if (D > 0) {
+        x1 = (-b - sqrt(D)) / (2 * a); 
+        x2 = (-b + sqrt(D)) / (2 * a);
+        cout << "Уравнение имеет два решения" << endl << "Первое: " << x1 << endl << "Второе: " << x2 << endl << endl; // если дискриминант больше 0
+    }
+}
+
+void Vozvedenie(double a1, double n) { // возведение числа в степень
+    a1 = pow(a1, n);
+    
+    cout << "Введенное число в степени " << n << " = " << a1 << endl << endl;
+}
+
+void Sortirovka(int n1) { // сортировка вставками
+    int a[n1], temp1, temp2;
+    int i, j; // переменные для циклов
+    
+    cout << "Введите элементы массива:" << endl;
+    
+    for (i = 0; i < n1; i++) { 
+        cin >> a[i];
+    }
+    
+    for (i = 0; i < n1 - 1; i++) {
+        
+        temp2 = i + 1; // мы идем от 0, следовательно, передвигаем указатель на первый элемент
+        temp1 = a[temp2]; // если условия ниже выполнятся, то мы заменяем элемент на "temp1"
+        for (j = i + 1; j > 0; j--) {
+            if (temp1 < a[j - 1]) { 
+                a[j] = a[j - 1]; 
+                temp2 = j - 1; // сдвигаем указатель
+            }
+ 
+        }
+        a[temp2] = temp1;
+    }
+    cout << endl << "Отсортированный массив: ";
+    for (i = 0; i < n1; i++) {
+        cout << a[i] << " ";
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    
+    double a, b, c;
+    cout << "Введите коэффициент A: ";
+    cin >> a;
+    cout << "Введите коэффициент B: ";
+    cin >> b;
+    cout << "Введите коэффициент C: ";
+    cin >> c;
+    Yrovnenie(a, b, c);
+    
+    double a1, n;
+    cout << "Введите число для возведения в степень: ";
+    cin >> a1;
+    cout << "Введите степень: ";
+    cin >> n;
+    Vozvedenie(a1, n);
+    
+    int n1;
+    cout << "Введите размер массива: ";
+    cin >> n1;
+    Sortirovka(n1);
+    
+    return 0;
+}
