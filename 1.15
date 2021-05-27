@@ -1,0 +1,31 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void Temp(double t) {
+    double f;
+    f = t * 9 / 5 + 32; // перевод в градусы по Фаренгейту
+    cout << setw(9) << fixed << setprecision(0) << t; // «fixed << setprecision(…)» - определенное количество знаков после запятой
+    cout << setw(18) << fixed << setprecision(1) << f << endl << endl; // «setw(…)» - фиксированный отступ между символами
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    cout << "Перевод температуры из градусов Цельсия в градусы по Фаренгейту" << endl << endl;
+    
+    int n;
+    cout << "Введите максимальный градус по Цельсию в таблице: ";
+    cin >> n;
+    cout << endl;
+    
+    int a[n];
+    
+    double t = 0; // переменная для градусов по Цельсию
+    for (int i = 0; i <= n; i++) { 
+        Temp(t);
+        t++;
+    }
+    
+    return 0;
+}
