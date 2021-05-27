@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <algorithm> 
+
+using namespace std;
+
+void Reverse(string s) { // переворачиваем строку
+    reverse(s.begin(), s.end());
+    cout << "Перевернутая строка: " << s << endl << endl;
+}
+int main() {
+    setlocale(LC_ALL, "Russian");
+    
+    cout << "Введите первую строку: ";
+    string s1, s2, s3;
+    getline(cin, s1);
+    Reverse(s1);
+    
+    cout << "Введите вторую строку: ";
+    getline(cin, s2);
+    Reverse(s2);
+    
+    cout << "Введите третью строку: ";
+    getline(cin, s3);
+    Reverse(s3);
+    
+    
+    return 0;
+}
