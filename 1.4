@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    cout << "Перевод температуры из градусов Цельсия в градусы по Фаренгейту" << endl << endl;
+    
+    int n;
+    double f;
+    cout << "Введите максимальный градус по Цельсию в таблице: ";
+    cin >> n;
+    cout << endl;
+    
+    int a[n];
+    
+    double t = 0;
+    for (int i = 0; i <= n; i++) { 
+        f = t * 9 / 5 + 32;
+        cout << fixed << setprecision(0) << t;
+        cout << setw(18) << fixed << setprecision(1) << f << endl << endl;
+        t++;
+    }
+    
+    return 0;
+}
