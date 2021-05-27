@@ -15,11 +15,11 @@ int main() {
     
     int a[n];
     
-    double t = 0;
+    double t = 0; // переменная для градусов по Цельсию
     for (int i = 0; i <= n; i++) { 
-        f = t * 9 / 5 + 32;
-        cout << fixed << setprecision(0) << t;
-        cout << setw(18) << fixed << setprecision(1) << f << endl << endl;
+        f = t * 9 / 5 + 32; // перевод в градусы по Фаренгейту
+        cout << setw(9) << fixed << setprecision(0) << t; // «fixed << setprecision(…)» - определенное количество знаков после запятой
+        cout << setw(18) << fixed << setprecision(1) << f << endl << endl; // «setw(…)» - фиксированный отступ между символами
         t++;
     }
     
