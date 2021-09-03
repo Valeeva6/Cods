@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    float a, b, c;
+    int a1, b1, c1;
+    float sum;
+    cout << "price of banana: ";
+    cin >> a;
+    cout << "number of banana: ";
+    cin >> a1;
+    cout << "price of coffee: ";
+    cin >> b;
+    cout << "number of coffee: ";
+    cin >> b1;
+    cout << "price of ice cream: ";
+    cin >> c;
+    cout << "number of ice cream: ";
+    cin >> c1;
+    sum = a * a1 + b * b1 + c * c1;
+    cout << sum << endl;
+    return 0;
+}
