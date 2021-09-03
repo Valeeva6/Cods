@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a, b, c;
+    cout << "Enter a: ";
+    cin >> a;
+    
+    b = a + 24;
+    c = (a + b) * 2;
+    
+    cout << a << endl << b << endl << c << endl;
+    return 0;
+}
