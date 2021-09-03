@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int a, result, ex;
+    
+    for (int i = 0; ; i++) {
+    cout << "Enter a: ";
+    cin >> a;
+    result = a * a * a;
+    cout << result << endl;
+    
+    cout << "Exit - 0, Continue - 1: ";
+    cin >> ex;
+        if (ex == 0) {
+            break;
+        }
+    }
+    
+    return 0;
+}
